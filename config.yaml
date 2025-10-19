@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=./node_modules/envio/evm.schema.json
+name: envio-indexer
+networks:
+- id: 84532
+  start_block: 0
+  contracts:
+  - name: CheckIn
+    address:
+    - 0xA39Fa52c73930b35f5319e1909d862D944A5b5A1
+    handler: src/EventHandlers.ts
+    events:
+    - event: CheckedIn(address indexed user, uint256 timestamp)
+unordered_multichain_mode: true
+preload_handlers: true

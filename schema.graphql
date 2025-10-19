@@ -1,0 +1,6 @@
+type CheckIn_CheckedIn {
+  id: ID!
+  user: String!
+  timestamp: BigInt!
+}
+
