@@ -1,6 +1,28 @@
-type CheckIn_CheckedIn {
+type CreditSystem_CreditsDeposited {
   id: ID!
   user: String!
+  token: String!
+  tokenAmount: BigInt!
+  creditsMinted: BigInt!
+  usdRate: BigInt!
+  timestamp: BigInt!
+}
+
+type CreditSystem_CreditsDepositedETH {
+  id: ID!
+  user: String!
+  ethAmount: BigInt!
+  creditsMinted: BigInt!
+  ethUsdRate: BigInt!
+  timestamp: BigInt!
+}
+
+type CreditSystem_CreditsUsed {
+  id: ID!
+  user: String!
+  amount: BigInt!
+  useType: BigInt!
+  entityId: BigInt!
   timestamp: BigInt!
 }
 

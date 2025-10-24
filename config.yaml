@@ -1,14 +1,16 @@
 # yaml-language-server: $schema=./node_modules/envio/evm.schema.json
 name: envio-indexer
 networks:
-- id: 84532
+- id: 11155111
   start_block: 0
   contracts:
-  - name: CheckIn
+  - name: CreditSystem
     address:
-    - 0xA39Fa52c73930b35f5319e1909d862D944A5b5A1
+    - 0x03e117C3Ab3220146AD29E2F4cBEaCfFf28938a8
     handler: src/EventHandlers.ts
     events:
-    - event: CheckedIn(address indexed user, uint256 timestamp)
+    - event: CreditsDeposited(address indexed user, address indexed token, uint256 tokenAmount, uint256 creditsMinted, uint256 usdRate, uint256 timestamp)
+    - event: CreditsDepositedETH(address indexed user, uint256 ethAmount, uint256 creditsMinted, uint256 ethUsdRate, uint256 timestamp)
+    - event: CreditsUsed(address indexed user, uint256 amount, uint256 useType, uint256 entityId, uint256 timestamp)
 unordered_multichain_mode: true
 preload_handlers: true
